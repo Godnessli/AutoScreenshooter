@@ -35,16 +35,6 @@ Rectangle {
 
         selectionBehavior: TableView.SelectRows
 
-        function start()
-        {
-            for(var i = 0; i < tableModelId.rowCount; ++i)
-            {
-                console.log(i)
-            }
-        }
-
-        onStartSignal: start();
-
         delegate: Rectangle {
             id: cell
             implicitWidth: tableViewId.columnWidthProvider(column)
@@ -60,6 +50,8 @@ Rectangle {
                 font.pixelSize: 16
             }
 
+            property int count: tableModelId.rowCount
+
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -70,5 +62,35 @@ Rectangle {
                 }
             }
         }
+    }
+
+    property int i: 1
+
+    Timer {
+        id: timer
+        running: false
+        repeat: true
+        interval: 1000
+        onTriggered: {
+            if(i >= tableModelId.rowCount)
+                timer.running = false
+            else
+            {
+                console.log(i)
+                i++
+            }
+        }
+    }
+
+    Button {
+        id: auto
+        text: "Автомат"
+        anchors{
+            bottom: parent.bottom
+            right: parent.right
+            bottomMargin: 5
+            rightMargin: 15
+        }
+        onClicked: timer.running = true
     }
 }

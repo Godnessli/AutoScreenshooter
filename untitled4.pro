@@ -1,10 +1,10 @@
 QT += quick widgets quickcontrols2 webenginequick statemachine
 
-INCLUDEPATH = A:/Qt/xlnt_x64-windows/include
-LIBS += A:/Qt/xlnt_x64-windows/debug/lib/xlntd.lib
+#INCLUDEPATH = A:/Qt/xlnt_x64-windows/include
+#LIBS += A:/Qt/xlnt_x64-windows/debug/lib/xlntd.lib
 
-#INCLUDEPATH = C:/Users/kznts/vcpkg/packages/xlnt_x64-windows/include
-#LIBS += C:/Users/kznts/vcpkg/packages/xlnt_x64-windows/debug/lib/xlntd.lib
+INCLUDEPATH = C:/Users/kznts/vcpkg/packages/xlnt_x64-windows/include
+LIBS += C:/Users/kznts/vcpkg/packages/xlnt_x64-windows/debug/lib/xlntd.lib
 
 CONFIG += qmltypes
 QML_IMPORT_NAME = com.mycompany.qmlcomponents
@@ -16,7 +16,7 @@ SOURCES += \
         tablemodel.cpp
 
 resources.files = main.qml \
-                  table.qml
+                  TableBuild.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources
 

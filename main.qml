@@ -27,12 +27,7 @@ ApplicationWindow {
 
                 PropertyChanges {
                     target: tab
-                    source: "table.qml"
-                }
-
-                PropertyChanges {
-                    target: auto
-                    enabled: true
+                    source: "TableBuild.qml"
                 }
 
                 PropertyChanges {
@@ -53,11 +48,6 @@ ApplicationWindow {
                 PropertyChanges {
                     target: tab
                     source: ""
-                }
-
-                PropertyChanges {
-                    target: auto
-                    enabled: false
                 }
 
                 PropertyChanges {
@@ -130,22 +120,6 @@ ApplicationWindow {
             height: 60
             text: qsTr("Скриншот")
             onClicked: web.grabToImage(function(result) {result.saveToFile();});
-        }
-
-        signal startSignal
-
-        Button {
-            id: auto
-            enabled: false
-            anchors {
-                horizontalCenter: instruments.horizontalCenter
-                top: screenbtn.bottom
-                topMargin: 40
-            }
-            width: 180
-            height: 60
-            text: "Автомат"
-            onClicked: instruments.startSignal()
         }
     }
 
