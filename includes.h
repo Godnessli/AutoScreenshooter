@@ -28,7 +28,7 @@
 #include <QQmlEngine>
 #include <QQuickWindow>
 #include <QSurfaceFormat>
-#include <QtWebEngineQuick>
+#include <QWebEngineView>
 #include <xlnt/xlnt.hpp>
 
 #endif // INCLUDES_H

@@ -1,4 +1,4 @@
-QT += quick widgets quickcontrols2 webenginequick statemachine
+QT += quick widgets quickcontrols2 statemachine webenginewidgets
 
 #INCLUDEPATH = A:/Qt/xlnt_x64-windows/include
 #LIBS += A:/Qt/xlnt_x64-windows/debug/lib/xlntd.lib
@@ -13,7 +13,8 @@ QML_IMPORT_MAJOR_VERSION = 1
 SOURCES += \
         main.cpp \
         readtable.cpp \
-        tablemodel.cpp
+        tablemodel.cpp \
+        webworker.cpp
 
 resources.files = main.qml \
                   TableBuild.qml
@@ -33,6 +34,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     includes.h \
     readtable.h \
-    tablemodel.h
+    tablemodel.h \
+    webworker.h
 
 FORMS +=

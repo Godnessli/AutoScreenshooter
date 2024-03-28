@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtWebEngine
 import QtQuick.Dialogs
+import QtQuick.Controls.Imagine
 import com.mycompany.qmlcomponents
 
 ApplicationWindow {
@@ -14,6 +15,7 @@ ApplicationWindow {
 
     Rectangle {
         id: maps1
+        objectName: "maps"
         anchors {
             left: parent.left
             leftMargin: 245
@@ -78,13 +80,6 @@ ApplicationWindow {
             right: parent.right
             bottom: parent.bottom
         }
-    }
-
-    WebEngineView {
-        id: web
-        anchors.fill: maps1
-        url: "https://webnavlo.nta.group/WNavSystemB/"
-        onCertificateError: error.acceptCertificate()
     }
 
     Rectangle{
